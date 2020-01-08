@@ -1,0 +1,44 @@
+<html>
+       <head>
+          <title>The jQuery Example</title>
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+          <script type="text/javascript" language="javascript">
+             // $(document).ready(function() {
+             //    $("#driver").click(function(event){
+             //       $('#stage').load('./https://code.jquery.com/jquery-3.4.1.min.js');
+             //    });
+             // });
+  //                    $(document).ready(function() {
+  //           $('#load-du-lieu').click(function(e) {
+  //             e.preventDefault();
+  //             $.get('vidu1.html', function(ketqua) {
+  //               $('#noidung').html(ketqua);
+  //               $('#noidung').html($('#chuoi-can-lay').html());
+  //             });
+      
+  //   });
+  // });
+  $(document).ready(function() {
+        $('#load-du-lieu').click(function(e) {
+            e.preventDefault();
+            $.post('vidu2.php', {
+                a: "content abc",
+                b: "content bcd"
+            },function(ketqua) {
+                $('#noidung').html(ketqua);
+            });
+            
+        });
+    });
+          </script>
+       </head>
+       <body>
+          <div id="stage">
+             STAGE
+          </div>
+          <input type="button" id="load-du-lieu" value="Load Data" />
+          <div id="noidung">
+          
+          </div>
+       </body>
+    </html>
